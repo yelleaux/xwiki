@@ -14,7 +14,7 @@ RUN curl -L \
       'http://central.maven.org/maven2/org/hsqldb/hsqldb/2.3.3/hsqldb-2.3.3.jar' \
       -o 'webapps/ROOT/WEB-INF/lib/hsqldb-2.3.3.jar'
 
-#COPY setenv.sh bin/
+COPY env.sh bin/
 #COPY catalina.policy.append catalina.policy.append
 
 #RUN cat catalina.policy.append >> conf/catalina.policy && \
