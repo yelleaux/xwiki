@@ -14,13 +14,13 @@ RUN curl -L \
       'http://central.maven.org/maven2/org/hsqldb/hsqldb/2.3.3/hsqldb-2.3.3.jar' \
       -o 'webapps/ROOT/WEB-INF/lib/hsqldb-2.3.3.jar'
 
-COPY setenv.sh bin/
-COPY catalina.policy.append catalina.policy.append
+#COPY setenv.sh bin/
+#COPY catalina.policy.append catalina.policy.append
 
-RUN cat catalina.policy.append >> conf/catalina.policy && \
-    rm catalina.policy.append && \
-    echo 'environment.permanentDirectory=/var/local/xwiki' >> \
-        webapps/ROOT/WEB-INF/xwiki.properties
+#RUN cat catalina.policy.append >> conf/catalina.policy && \
+#    rm catalina.policy.append && \
+#    echo 'environment.permanentDirectory=/var/local/xwiki' >> \
+#        webapps/ROOT/WEB-INF/xwiki.properties
 
 VOLUME ["/usr/local/tomcat/webapps/ROOT/WEB-INF", "/var/local/xwiki"]
 #COPY scripts /scripts
